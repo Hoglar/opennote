@@ -1,0 +1,41 @@
+{% extends "landingpage/layout.html" %}
+
+{% block main %}
+<div class="overviewMain">
+    <form action="{% url 'notes:overview' %}" method="post">
+        {% csrf_token %}
+        <div class="noteHeader">
+            <div>
+                {{overviewFilter.author.label_tag}}
+                {{overviewFilter.author}}
+            </div>
+            <div>
+                {{overviewFilter.category.label_tag}}
+                {{overviewFilter.category}}
+            </div>
+            <div>
+                {{ overviewFilter.search.label_tag}}
+                {{ overviewFilter.search }}
+            </div>
+            <input type="submit" value="Search" class="overviewButton">
+        </div>
+    </form>
+    <ul class="overviewList">
+        {% for note in notes %}
+        <a href="{% url 'notes:note' note.slug %}" class="overviewNote">
+            <div>
+                {{note.title}}
+            <div class="overviewNoteCredentials">
+                {{note.creation_time}} by {{note.author|title}}
+
+            </div>
+            </div>
+        
+           
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+    
+    
+{% endblock %}

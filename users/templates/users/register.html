@@ -1,0 +1,14 @@
+{% extends "landingpage/layout.html" %}
+
+{% block main %}
+
+    <div class="registerForm">
+        <form action="{% url 'users:register' %}" method="post">
+            {% csrf_token %}
+            {{ registerForm }}
+            <input class="formButton" value="Register user" type="submit">
+        </form>
+    </div>
+    
+
+{% endblock %}

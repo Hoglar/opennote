@@ -1,0 +1,32 @@
+{% extends "landingpage/layout.html" %}
+
+{% block main %}
+    <div class="noteMain">
+        <div class="noteForm">
+            <form action="{% url 'notes:create' %}" method="post">
+                {% csrf_token %}
+                <div class="noteHeader">
+                    <div>
+                        {{form.title.label_tag}}
+                        {{form.title}}
+                        {{form.category.label_tag}}
+                        {{form.category}}
+                    </div>
+                </div>
+                <datalist id="categories">
+                    {% for category in categories %}
+                        <option value="{{category.name}}">
+                    {% endfor %}
+                </datalist>
+                <div class="noteTextField">
+                    {{form.note}}
+                </div>
+                <div class="noteFooter">
+                    <div></div>
+                    <input type="submit" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+        
+{% endblock %}

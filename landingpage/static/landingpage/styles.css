@@ -1,0 +1,237 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    box-sizing: border-box;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 80px repeat(8, 1fr);
+    grid-template-rows: 10% 90% 150px;
+    grid-template-areas: 
+        "aside header header header header header header header header"
+        "aside main main main main main main main main"
+        "aside footer footer footer footer footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #1b2040;
+    color: #f2f2f2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8%;
+    padding-left: 4%;
+    font-size: 24px;
+}
+
+header a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #f2911b;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-top: 100px;
+    align-items: center;
+}
+
+aside div {
+    margin-bottom: 20px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    background-color: #f2f2f2;
+    justify-content: center;
+}
+
+.noteMain {
+    width: 100%;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 18% 50% auto;
+    grid-template-rows: 10% auto 20%;
+    grid-template-areas: 
+        ". . ."
+        ". noteForm comment-area"
+        ". help-section comment-form"
+        ;
+    color: #0f1026;
+}
+
+
+
+main h1 {
+    font-size: 100px;
+    letter-spacing: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: center;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #4973f2;
+}
+
+.registerForm {
+    width: 30%;
+    font-size: 24px;
+    align-self: center;
+    justify-self: center;
+}
+
+.registerForm form{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm input {
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.formButton {
+    color: #f2f2f2;
+    background-color: #1b2040;
+}
+
+.formButton:hover {
+    cursor: pointer;
+}
+
+/*  Note section, maybe i should make a separate file, but not now   */
+
+/* Create */
+.noteForm {
+    grid-area: noteForm;
+    display: flex;
+    flex-direction: column;
+}
+
+.noteHeader {
+    margin-bottom: 10px;
+    align-self: stretch;
+    display: flex;
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.noteHeader div {
+    height: 40px;
+    width: 50%;
+    display: flex;
+    letter-spacing: 1.5px;
+}
+
+.noteHeader div input {
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #f2f2f2;
+    border: 2px solid #f2f2f2;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+}
+
+
+.noteTextField textarea {
+    width: 100%;
+    font-size: 22px;
+    background-color: #f2f2f2;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+.noteFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noteFooter input {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    padding: 5px 20px;
+
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-top: 0px solid #ccc;
+    min-width: 200px;
+}
+
+.noteFooter input:hover {
+    cursor: pointer;
+}
+
+
+.footerButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+        /*   OVERVIEW    */
+
+.overviewMain {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.overviewMain a {
+    text-decoration: none;
+
+}
+
+.overviewButton {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-width: 200px;
+
+}
+
+.overviewButton:hover {
+    cursor: pointer;
+}
+
+.overviewNote {
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-decoration: none;
+}
+
+.overviewNoteCredentials {
+    font-size: 12px;
+    font-style: italic;
+    text-align: end;
+}
+
+.overviewList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 600px;
+}

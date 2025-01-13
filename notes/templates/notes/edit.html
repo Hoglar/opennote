@@ -1,0 +1,116 @@
+{% extends "landingpage/layout.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/styles.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="noteMain">
+        <div class="noteForm">
+            <form id="edit-form" action="{% url 'notes:edit' note_slug=note_slug %}" method="post">
+                {% csrf_token %}
+                <div class="noteHeader">
+                    <div>
+                        {{title}}
+                    </div>
+                    <div>
+                        Category:
+                        {{category}}
+                    </div>
+                </div>
+                <datalist id="categories">
+                    {% for category in categories %}
+                        <option value="{{category.name}}">
+                    {% endfor %}
+                </datalist>
+                <div class="noteTextField">
+                    {{form.note}}
+                </div>
+            </form>
+            <div class="noteFooter">
+                <div>
+                    Views: {{views}}
+                </div>
+                <div class="footerButtons">
+                    <input type="button" value="Ask for help" onclick="hello()">
+                    <input  type="button" 
+                            value="Delete" 
+                            id="deleteButton"
+                            onclick="document.getElementById('id_delete_note_modal').style.display='block'">
+                    </input>
+                    <input form="edit-form" type="submit" value="Save">
+                </div>   
+            </div>
+        </div>
+        <div class="comment-area" id="comment-area">
+            <h2>
+                Comments
+            </h2>
+            <div class="comments">
+                {% for comment in comments %}
+                <div class="comment">{{comment.author|title}}: {{comment.comment}}</div>
+                {% endfor %}   
+            </div>
+        </div>
+        <div class="comment-form">
+            <form action="{% url 'notes:add_comment' note_slug=note_slug%}" method="post">
+                {% csrf_token %}
+                {{ commentForm.comment}}
+                <input type="submit" value="Add comment" class="comment-button">
+            </form>
+        </div>
+        <div class="help-section" id="help-section">
+            <form action="{% url 'notes:add_help_request' note_slug=note_slug %}" method="post" class="help-section-form">
+                {% csrf_token %}
+                <div>
+                    <p>I need help with: </p>
+                    {{helpDescriptionForm.description}}
+                </div>
+                <div>
+                    <p>Offer: </p>
+                    {{helpDescriptionForm.offer}}
+                </div>
+                <div>
+                    <input type="submit" value="Flagg for help" class="help-button">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="id_delete_note_modal" class="modal">
+        <form class="modal-content" method="post" action="{% url 'notes:delete' note_slug=note_slug %}">
+            {% csrf_token %}
+            <div class="modal-container">
+                <h2>Sure you want to delete post?</h2>
+                <div class="modal-buttons">
+                    <input type="button" value="Cancel" class="modal-button-cancel modal-button" onclick="document.getElementById('id_delete_note_modal').style.display='none'">
+                    <input type="submit" value="Delete" class="modal-button-delete modal-button">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+            helpSection = document.getElementById("help-section")
+            helpSection.style.display = "none"
+        function hello() {
+            
+            if (helpSection.style.display == "none") {
+                helpSection.style.display = "flex"
+            } else {
+                helpSection.style.display = "none"
+            }
+        }
+
+        // Get the modal
+        var modal = document.getElementById('id_delete_note_modal');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+{% endblock %}

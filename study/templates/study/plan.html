@@ -1,0 +1,24 @@
+{% extends "landingpage/layout.html" %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'study/studyStyles.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="studyPlanMain" id="studyPlanMain">
+        <div class="planed-area planing-box" id="planed-area">
+
+        </div>
+        <div class="repeat-area planing-box" id="repeat-area"></div>
+        <div class="done-area planing-box" id="done-area"></div>
+        <div class="button-area" id="button-area">
+            <form action="{% url 'study:create_task' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Create Task">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

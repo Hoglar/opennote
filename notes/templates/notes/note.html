@@ -1,0 +1,71 @@
+{% extends "landingpage/layout.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notes/styles.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="noteMain">
+        <div class="noteForm">
+            <form>
+                <div class="noteHeader">
+                    <div>
+                        {{title}}
+                    </div>
+                    <div>
+                        Category:
+                        {{category}}
+                    </div>
+                </div>
+                <div class="noteTextField">
+                    <textarea rows="16" disabled="true">{{note}}</textarea>
+                </div>
+            </form>
+            <div class="noteFooter">
+                <div>
+                    Views: {{views}}
+                </div>
+                <div>
+                    <a id="id_user_select_button">{{author|title}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="comment-area" id="comment-area">
+            <h2>
+                Comments
+            </h2>
+            <div class="comments">
+                {% for comment in comments %}
+                <div class="comment">{{comment.author|title}}: {{comment.comment}}</div>
+                {% endfor %}   
+            </div>
+        </div>
+        <div class="comment-form">
+            <form action="{% url 'notes:add_comment' note_slug=note_slug%}" method="post">
+                {% csrf_token %}
+                {{ commentForm.comment}}
+                <input type="submit" value="Add comment" class="comment-button">
+            </form>
+        </div>
+        {% if helpDescriptionForm %}
+            <div class="help-section" id="help-section" style="display: flex;">
+                <form action="" class="help-section-form" disabled>
+                    <div>
+                        <p>I need help with: </p>
+                        {{helpDescriptionForm.description}}
+                    </div>
+                    <div>
+                        <p>Offer: </p>
+                        {{helpDescriptionForm.offer}}
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+    {% include 'notes/user_modal.html' %}
+{% endblock %}
+
+{% block body %}
+    <script src="{% static 'notes/js/functionality.js' %}"></script>
+{% endblock%}

@@ -1,0 +1,24 @@
+<div id="id_select_user_modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-container">
+            <div class="modal-user-info">
+                <div class="modal-user-info-block">
+                    <h2>{{author|title}}</h2>
+                    <p>Joined: 2023</p>
+                    <p>P: 3000</p>
+                </div>
+                <div class="modal-user-info-block">
+                    <h3>About:</h3>
+                    <p>Write a bit about yourself, what are you learning, and stuff!</p>
+                </div>
+            </div>
+            <div class="modal-user-interaction">
+                <div class="modal-buttons">
+                    <a href="{% url 'user:message_user' receiver=author %}" class="modal-button">Message</a>
+                    <input type="button" value="Follow" class="modal-button modal-button-mid">
+                    <input type="button" value="View profile" class="modal-button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

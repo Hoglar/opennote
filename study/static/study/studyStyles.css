@@ -1,0 +1,42 @@
+
+
+
+.studyPlanMain {
+    width: 100%;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: auto 33% auto;
+    grid-template-rows: 10% auto 10%;
+    grid-template-areas: 
+        ". . ."
+        "planed-area repeat-area done-area"
+        "button-area statistics-area ."
+        ;
+    color: #0f1026;
+}
+
+.planed-area {
+    grid-area: planed-area;
+}   
+
+.repeat-area {
+    grid-area: repeat-area;
+}   
+
+.done-area {
+    grid-area: done-area;
+}
+
+.button-area {
+    grid-area: button-area;
+}
+
+.planing-box {
+    border: solid 1px #ccc;
+    margin: 2%;
+}
+
+.statistics-area {
+    grid-area: statistics-area;
+    border: solid 1px #ccc;
+}

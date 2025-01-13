@@ -1,0 +1,10 @@
+{% extends "landingpage/layout.html" %}
+
+{% block main %}
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'todo:add' %}">Add task</a>
+{% endblock %}

@@ -1,0 +1,175 @@
+/*  COMMENTS  */
+
+.comment-area {
+    grid-area: comment-area;
+    border-left: solid 1px #ccc;
+    margin-left: 10%;
+    overflow-y: auto;
+    padding-left: 20px;
+
+}   
+
+.comments {
+    padding:20px;
+    max-height: 80%;
+}
+
+.comment {
+    margin:10px;
+    font-size: 18px;
+}
+
+.comment-form {
+    grid-area: comment-form;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.comment-form textarea {
+    font-size: 20px;
+    border-radius: 4px;
+    border: solid 1px #ccc;
+    resize: none;
+    padding: 8px 8px;
+    background-color: #f2f2f2;
+    outline: none;
+}
+
+.comment-button {
+    float: right;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    padding: 5px 20px;
+
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-top: 0px solid #ccc;
+    min-width: 200px;
+}
+
+.comment-button {
+    cursor: pointer;
+}
+
+
+.help-section {
+    display: none;
+    grid-area: help-section;
+    padding-bottom: 5%;
+}
+
+.help-section-form {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.help-section textarea {
+    font-size: 20px;
+    resize: none;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    border: solid 1px #ccc;
+    padding: 8px 8px;
+    outline: none;
+}
+
+.help-section p {
+    margin: 0px;
+}
+
+.help-section-form div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    justify-content: flex-end;
+
+}
+
+/* Delete Modal  */
+
+/* The Modal (background) */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-top: 50px;
+  }
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #f2f2f2;
+    margin: 15% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 30%; /* Could be more or less, depending on screen size */
+    display: flex;
+    justify-content: center;
+  }
+
+.modal-container {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-buttons {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.modal-button {
+    width: 50%;
+    border: 0px solid #f2f2f2;
+    border-top: 1px solid #ccc;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #000;
+}
+
+.modal-button:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.modal-button-mid {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+.modal-button-cancel {
+    border-right: 1px solid #ccc;
+}
+
+
+#id_user_select_button:hover {
+    cursor: pointer;
+}
+
+.modal-user-info {
+    display: flex;
+    flex-direction: row;
+    min-height: 200px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.modal-user-info-block {
+    width: 50%;
+}

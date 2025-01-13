@@ -1,0 +1,14 @@
+{% extends "landingpage/layout.html" %}
+
+{% block main %}
+    <h1>Add task</h1>
+
+
+    <form action="{% url 'todo:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+{% endblock %}
+                
+            
