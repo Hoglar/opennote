@@ -21,6 +21,10 @@ visuelt:
     for det visuelle må jeg få kontroll på django igjen. 
 
         - Django generelt. 
+            - Er det her vi er da? La oss få litt oversikt igjen!
+            - Kjør lett, har god tid. 
+            - Ganske god kontroll på url nå, 
+            neste er templates og static
         - templates
         - Static
         - update serveren med dette. static og, må ha kontroll her. 
