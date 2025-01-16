@@ -24,8 +24,12 @@ visuelt:
             - Er det her vi er da? La oss få litt oversikt igjen!
             - Kjør lett, har god tid. 
             - Ganske god kontroll på url nå, 
+            Lærte mer om url i går, Hvordan jeg kan sende og bruke url i koden. 
             neste er templates og static
         - templates
+            - Ser ut som django bruker Django template language. Er det dette jeg skal bruke eller er det lurt og gå over til noe annet?
+                Virker som DTL er solid. Orker ikke starte med React og Js landskapet igjen. Var vel en grunn til at jeg bytta. Dette er litt mindre fancy, men det kan være positivt i lengden tror jeg. 
+            Burde bli bedre på dette da. Context er sentralt. og 
         - Static
         - update serveren med dette. static og, må ha kontroll her. 
 
@@ -35,6 +39,8 @@ dataene
     Jeg skal bruke database her. Jeg burde nok bruke en del tid på dette. 
     om jeg kan jobbe litt med det visuele først, så ta databasen etterpå.
     Tror det er lurt ja
+
+    
 
 Server
     Dette er i grunn oppe og går allerede. så trenger ikke så mye fokus her nå
