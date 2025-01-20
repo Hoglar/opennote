@@ -34,6 +34,7 @@ visuelt:
         - update serveren med dette. static og, må ha kontroll her. 
 
         - Så må jeg få kontroll på html og css.
+        - Django template language
 
 dataene
     Jeg skal bruke database her. Jeg burde nok bruke en del tid på dette. 

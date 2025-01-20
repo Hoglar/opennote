@@ -1,3 +1,27 @@
+{% extends "landingpage/layout.html" %}
 
-<h1>HELLO, Welcome to my fantastic boat!</h1>
+<!--Vi drøyer litt med load static her, da jeg ikke har helt kontroll på det-->
+{% block main %}
+
+<p>HELLO, Welcome to my fantastic boat!</p>
 <p>{{ bruker }}</p>
+
+{% endblock%}
+
+<!-- Vrient med comments da. Ser pent ut da,
+ 
+    Kan gå over flere linjer og, det er bra.
+
+    La oss planlegge litt her. 
+    Alt er pakket inn i en layout egentlig. 
+    1. må importere eller extende landingpage/layout. 
+    2. Så bygges ting inne i block main. Denne er laget i layouten tror jeg
+        Layouten tar seg av det rundt og som er felles for alle sidene. 
+        Så lager jeg ny css for main. er ikke det lurt da?
+
+    3. Er så klar til å bygge der inne. trenger vel en form for grid?
+        - bygges med klosser. burde jeg tegne en skisse?
+
+
+
+er vel det som er årsak-->
