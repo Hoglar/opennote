@@ -41,6 +41,8 @@ dataene
     om jeg kan jobbe litt med det visuele først, så ta databasen etterpå.
     Tror det er lurt ja
 
+    Har dårlig kontroll på postgress. Bør kanskje lage et nytt prosjekt. Ta en guide på dette.
+
     
 
 Server
